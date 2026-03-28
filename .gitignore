@@ -1,0 +1,37 @@
+# Node dependencies
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# GUMOI SENSITIVE DATA (OPSEC)
+# Block all prompts, books, and resolved artifacts from reaching GitHub
+Temp/
+lessons/
+*.txt
+*.ini
+*.md
+!src/**/*.md
+!README.md
+!SECURITY.md
+!*.resolved
+*.resolved
+
+# Brain artifacts (Specific precaution)
+brain/
+V10_TURNS/
+*.json
+!package.json
+!tsconfig.json
+!vite.config.ts

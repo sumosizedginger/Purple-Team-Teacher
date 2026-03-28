@@ -1,0 +1,212 @@
+/* COMPONENTS.CSS - THE ENTITIES */
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.node-disk-3d {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.node-hub {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+.hub-anchor {
+  position: relative !important;
+  width: 1px !important;
+  height: 1px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: auto !important;
+}
+
+.hub-core-3d {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 20 !important;
+}
+
+.hub-spoke-grid {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 1000px !important;
+  height: 1000px !important;
+  transform: translate(-500px, -500px) !important;
+  overflow: visible !important;
+  pointer-events: none !important;
+  z-index: 5 !important;
+}
+
+.hub-ring {
+  position: absolute !important;
+  width: 480px !important; /* matches 240 radius */
+  height: 480px !important;
+  border: 1px dashed rgba(139, 92, 246, 0.08) !important;
+  border-radius: 50% !important;
+  pointer-events: none !important;
+}
+
+.disk-inner {
+  background: rgba(18, 18, 22, 0.9);
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.disk-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+}
+
+/* BIBLE LIBRARY */
+.bible-search-row { padding: 15px; display: flex; gap: 10px; }
+.bible-search-input {
+  flex: 1; background: rgba(0, 0, 0, 0.2); border: 1px solid var(--glass-border);
+  padding: 8px 12px; color: #fff; font-family: var(--font-mono);
+}
+
+.bible-list-item {
+  padding: 10px 15px; cursor: pointer; border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+.bible-list-item.active { background: rgba(139, 92, 246, 0.1); border-left: 3px solid var(--accent-purple); }
+
+/* AATMF MODULES */
+.aatmf-expansion { margin-top: 30px; }
+.tactic-block {
+  background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
+  padding: 15px; margin-bottom: 20px;
+}
+.tactic-name { font-family: var(--font-mono); color: var(--accent-gold); font-weight: 800; }
+.technique-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 10px; margin-top: 10px; }
+.tech-tile { background: rgba(255, 255, 255, 0.05); padding: 8px; border: 1px solid var(--border-color); }
+.tech-id { font-size: 0.6rem; color: var(--accent-purple); }
+.tech-label { font-size: 0.7rem; color: #fff; }
+
+.cyber-tile {
+  background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color);
+  padding: 20px; text-align: center;
+}
+.tile-val { font-size: 1.2rem; font-weight: 900; color: var(--accent-gold); }
+.tile-lab { font-size: 0.55rem; color: var(--text-secondary); }
+
+/* KERNEL CONTENT - BLADE RIGHT */
+.kernel-body {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 20px;
+}
+
+.kernel-footer {
+  border-top: 1px solid var(--glass-border);
+  padding-top: 15px;
+  margin-top: auto;
+}
+
+.stability-meter {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--accent-purple);
+  letter-spacing: 2px;
+}
+
+/* TACTICAL GRIDS */
+.vector-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panel-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--accent-gold);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.journal-viewer {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  background: rgba(0,0,0,0.2);
+}
+
+.tech-tile:hover {
+  border-color: var(--accent-gold);
+  background: rgba(251, 191, 36, 0.05);
+}
+
+.core-symbol {
+  position: absolute !important;
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 0 30px var(--accent-purple);
+  z-index: 100;
+  letter-spacing: -2px;
+  white-space: nowrap;
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(2px); /* SUBTLE OPTICAL CORRECTION */
+}
+
+.core-aura {
+  position: absolute !important;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.2), transparent 70%);
+  border-radius: 50%;
+  z-index: 10;
+}

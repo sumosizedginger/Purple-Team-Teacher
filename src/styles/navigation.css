@@ -1,0 +1,194 @@
+/* NAVIGATION.CSS - INTERFACE FLOW */
+.nexus-header {
+  height: 80px;
+  flex: 0 0 80px;
+  background: rgba(10, 10, 12, 0.98);
+  border-bottom: 2px solid var(--accent-purple);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 2000;
+  backdrop-filter: blur(40px);
+  position: relative;
+}
+
+.header-controls {
+  opacity: 0.15;
+  transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.nexus-header:hover .header-controls { opacity: 1; }
+
+.blade-left {
+  background: rgba(10, 10, 12, 0.6);
+  backdrop-filter: blur(12px);
+  border-right: 1px solid var(--border-color);
+  padding: 20px;
+  overflow-y: auto; /* ALLOW SCROLL */
+  max-height: 100vh;
+}
+
+.kernel-right {
+  background: rgba(10, 10, 12, 0.8);
+  backdrop-filter: blur(4px);
+  border-left: 1px solid var(--border-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto; /* ALLOW SCROLL */
+  max-height: 100vh;
+}
+
+.ghost-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 5px;
+  z-index: 9999;
+  cursor: pointer;
+  background: transparent;
+}
+
+.ghost-bar:hover { background: rgba(139, 92, 246, 0.2); }
+
+.mode-quiet .blade-left, .mode-quiet .kernel-right {
+  width: 0; opacity: 0; pointer-events: none; visibility: hidden;
+}
+
+.mode-quiet .nexus-header { transform: translateY(-100%); opacity: 0; }
+
+.section-head {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: var(--accent-purple);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 900;
+}
+
+.voltage-status, .quiet-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.brutalist-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 4px 4px 0 var(--accent-purple);
+}
+
+.brutalist-btn-sm {
+  background: var(--text-primary);
+  color: #000;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 950;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--accent-purple);
+}
+
+.indicator-dot { width: 6px; height: 6px; border-radius: 50%; }
+.indicator-dot.purple { color: var(--accent-purple); background: currentColor; box-shadow: 0 0 8px currentColor; }
+.indicator-dot.gold { color: var(--accent-gold); background: currentColor; box-shadow: 0 0 8px currentColor; }
+
+/* MYTHOS TICKER - TOP GLOBAL BAR */
+.mythos-ticker {
+  position: absolute;
+  top: 80px; /* Below Header */
+  left: 0;
+  width: 100vw;
+  height: 24px;
+  background: rgba(139, 92, 246, 0.1);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1500;
+  backdrop-filter: blur(4px);
+}
+
+.ticker-track {
+  display: flex;
+  white-space: nowrap;
+  gap: 50px;
+}
+
+.ticker-track span {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--accent-purple);
+  opacity: 0.8;
+}
+
+/* IDENTITY CARD - BLADE LEFT */
+.identity-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.id-tag, .id-brand, .id-status {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+}
+
+.id-tag { color: var(--accent-gold); font-weight: 900; }
+.id-brand { color: var(--text-secondary); }
+.id-status { color: var(--accent-purple); opacity: 0.8; }
+
+.public-bridge {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-gold);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 900;
+  animation: bridge-pulse 2s infinite linear;
+}
+
+@keyframes bridge-pulse {
+  0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; }
+}
+
+/* VOLTAGE MONITOR */
+.voltage-monitor {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.voltage-flicker {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-purple);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-purple);
+}

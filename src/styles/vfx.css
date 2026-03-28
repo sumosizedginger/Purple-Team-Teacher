@@ -1,0 +1,80 @@
+/* VFX.CSS - THE ATMOSPHERE */
+.metabolic-void-container {
+  position: fixed; inset: 0; z-index: -1;
+  background: var(--bg-primary); overflow: hidden; pointer-events: none;
+}
+
+.void-blob {
+  position: absolute; border-radius: 50%; mix-blend-mode: screen;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, var(--accent-purple) 0%, transparent 70%);
+}
+
+.void-layer {
+  position: absolute; inset: 0; opacity: 0.3;
+}
+
+/* CRT SCANLINE */
+body::after {
+  content: " "; display: block; position: fixed; inset: 0;
+  background: repeating-linear-gradient(rgba(18, 16, 16, 0) 0px, rgba(18, 16, 16, 0) 1px, rgba(0, 0, 0, 0.15) 2px);
+  background-size: 100% 3px; z-index: 1000; pointer-events: none;
+}
+
+.id-glitch {
+  position: relative; color: #fff; font-weight: 950;
+}
+
+.id-glitch::before, .id-glitch::after {
+  content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.8;
+}
+
+.id-glitch::before { color: #ff00ff; z-index: -1; animation: glitch-anim-1 2s infinite linear alternate-reverse; }
+.id-glitch::after { color: #00ffff; z-index: -2; animation: glitch-anim-2 3s infinite linear alternate-reverse; }
+
+@keyframes glitch-anim-1 {
+  0% { clip: rect(30px, 9999px, 10px, 0); transform: skew(0.5deg); }
+  100% { clip: rect(50px, 9999px, 30px, 0); transform: skew(0.5deg); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip: rect(10px, 9999px, 50px, 0); transform: skew(-0.5deg); }
+  100% { clip: rect(30px, 9999px, 80px, 0); transform: skew(-0.5deg); }
+}
+
+/* RESONANCE PULSE */
+.resonance-active .core-symbol {
+  color: var(--accent-gold); text-shadow: 0 0 40px var(--accent-gold);
+  animation: resonance-pulse 2s infinite ease-in-out;
+}
+
+.resonance-active .core-aura {
+  background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+  opacity: 0.6 !important;
+}
+
+@keyframes resonance-pulse {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.5); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+.fracture-glitch {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(139, 92, 246, 0.1), transparent);
+  pointer-events: none;
+  z-index: 50;
+  animation: fracture-pulse 4s infinite ease-in-out;
+}
+
+@keyframes fracture-pulse {
+  0% { opacity: 0; }
+  50% { opacity: 0.2; }
+  100% { opacity: 0; }
+}
+
+.markdown-body {
+  font-size: 0.9rem; line-height: 1.6; color: var(--text-primary);
+}
+.markdown-body h1, .markdown-body h2 { color: var(--accent-purple); margin-top: 20px; }

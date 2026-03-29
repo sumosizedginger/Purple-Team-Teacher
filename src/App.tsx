@@ -12,6 +12,7 @@ import ReactMarkdown from 'react-markdown';
 import { JOURNAL_CONTENT } from './data/journal';
 
 import aatmfData from './data/AATMF_v3_1_MANIFEST.json';
+import { SEOManager } from './components/SEOManager';
 
 function App() {
   const { 
@@ -34,6 +35,7 @@ function App() {
 
   return (
     <NexusHUD>
+      <SEOManager />
       <div className={`nexus-scroller-gate ${!inRoom ? 'lock-scroll' : 'allow-scroll'}`}>
         <AnimatePresence mode="wait">
         {!inRoom ? (

@@ -23,4 +23,10 @@ export interface NexusNode {
     externalUrl?: string;
     links?: { label: string; url: string }[];
   };
+  seo?: {
+    metaTitle: string;
+    metaDescription: string;
+    keywords: string[];
+    schemaType: 'TechArticle' | 'FAQPage' | 'WebPage' | 'Organization';
+  };
 }
